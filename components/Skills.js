@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Globe, Server, Code, Brain, Wrench } from 'lucide-react';
+import { Globe, Server, Code, Brain, Wrench, Database } from 'lucide-react';
 
 const skillCategories = [
   {
@@ -36,6 +36,14 @@ const skillCategories = [
     bg: 'rgba(236,72,153,0.08)',
     border: 'rgba(236,72,153,0.25)',
     skills: ['AI Fundamentals', 'Prompt Engineering', 'OpenAI API'],
+  },
+  {
+    title: 'Databases',
+    icon: Database,
+    color: 'from-lime-400 to-green-500',
+    bg: 'rgba(132,204,22,0.08)',
+    border: 'rgba(132,204,22,0.25)',
+    skills: ['MongoDB', 'MySQL'],
   },
   {
     title: 'Tools & DevOps',

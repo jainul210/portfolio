@@ -1,4 +1,5 @@
 import './globals.css';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata = {
   title: 'Jainul Abdeen — Full-Stack Developer & B.Tech CSE Student',
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body>{children}</body>
+      <body><ScrollToTop />{children}</body>
     </html>
   );
 }

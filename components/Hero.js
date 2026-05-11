@@ -84,7 +84,7 @@ export default function Hero() {
             View Work
           </a>
           <a
-            href="/resume.pdf"
+            href="/Resume.pdf"
             download
             className="btn-glass flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-base text-textDark border border-white/70"
           >

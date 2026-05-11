@@ -148,6 +148,7 @@ section {
 }
 .input-glass::placeholder {
   color: var(--text-muted);
+  opacity: 0.45;
 }
 .input-glass:focus {
   border-color: rgba(16, 185, 129, 0.6);

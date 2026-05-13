@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Globe, Server, Code, Brain, Wrench, Database } from 'lucide-react';
+import { Globe, Server, Code, Brain, Wrench } from 'lucide-react';
 
 const skillCategories = [
   {
@@ -38,14 +38,6 @@ const skillCategories = [
     skills: ['AI Fundamentals', 'Prompt Engineering', 'OpenAI API'],
   },
   {
-    title: 'Databases',
-    icon: Database,
-    color: 'from-lime-400 to-green-500',
-    bg: 'rgba(132,204,22,0.08)',
-    border: 'rgba(132,204,22,0.25)',
-    skills: ['MongoDB', 'MySQL'],
-  },
-  {
     title: 'Tools & DevOps',
     icon: Wrench,
     color: 'from-cyan-400 to-sky-500',
@@ -53,6 +45,7 @@ const skillCategories = [
     border: 'rgba(6,182,212,0.25)',
     skills: ['Git & GitHub', 'VS Code', 'Vercel', 'Linux CLI', 'LaTeX'],
   },
+  
 ];
 
 function FadeIn({ children, delay = 0 }) {

@@ -2,7 +2,7 @@ import './globals.css';
 import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata = {
-  title: 'Jainul Abdeen — Full-Stack Developer & B.Tech CSE Student',
+  title: 'Jainul Abdeen — Full-Stack Developer',
   description:
     'Personal portfolio of Jainul Abdeen, a B.Tech CSE student at University of Lucknow and Full-Stack Developer specializing in Next.js, React, and AI integrations.',
   keywords: ['Jainul Abdeen', 'Full Stack Developer', 'Next.js', 'React', 'Portfolio', 'B.Tech CSE', 'Lucknow'],

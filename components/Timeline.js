@@ -17,7 +17,7 @@ const events = [
   {
     year: '2024',
     title: 'Class XII — Science',
-    org: 'Heritage International School',
+    org: 'Heritage International Public School',
     detail: 'Achieved 84.6% — Physics, Chemistry, Mathematics & Computer Science.',
     icon: School,
     color: 'from-indigo-400 to-purple-500',
@@ -26,7 +26,7 @@ const events = [
   {
     year: '2022',
     title: 'Class X — Secondary Education',
-    org: 'Heritage International School',
+    org: 'Heritage International Public School',
     detail: 'Achieved 86% — Developed early interest in programming and technology.',
     icon: BookOpen,
     color: 'from-pink-400 to-rose-500',
@@ -83,11 +83,7 @@ export default function Timeline() {
                     >
                       <Icon size={24} className="text-white" />
                     </div>
-                    {current && (
-                      <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary border-2 border-white">
-                        <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
-                      </span>
-                    )}
+                  
                   </div>
 
                   {/* Card */}

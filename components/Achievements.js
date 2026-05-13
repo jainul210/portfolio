@@ -11,7 +11,7 @@ const achievements = [
     desc: 'Actively contributes to open-source projects, improving community codebases and learning from real-world collaboration.',
     color: 'from-emerald-400 to-teal-500',
     bg: 'rgba(16,185,129,0.06)',
-    border: 'rgba(16,185,129,0.2)',
+    border: 'rgba(16,185,129,0.3)',
   },
   {
     icon: Trophy,
@@ -19,7 +19,7 @@ const achievements = [
     desc: 'Competed in hackathons, building functional prototypes under tight deadlines and showcasing creative problem-solving.',
     color: 'from-indigo-400 to-purple-500',
     bg: 'rgba(99,102,241,0.06)',
-    border: 'rgba(99,102,241,0.2)',
+    border: 'rgba(99,102,241,0.3)',
   },
   {
     icon: Users,
@@ -27,7 +27,7 @@ const achievements = [
     desc: 'Active member of the Computer Science & Engineering technology club at University of Lucknow, participating in events and workshops.',
     color: 'from-pink-400 to-rose-500',
     bg: 'rgba(236,72,153,0.06)',
-    border: 'rgba(236,72,153,0.2)',
+    border: 'rgba(236,72,153,0.3)',
   },
   {
     icon: Lightbulb,
@@ -35,7 +35,7 @@ const achievements = [
     desc: 'Built a full-stack skillset independently through online resources, documentation, and shipping real projects to production.',
     color: 'from-yellow-400 to-orange-500',
     bg: 'rgba(234,179,8,0.06)',
-    border: 'rgba(234,179,8,0.2)',
+    border: 'rgba(234,179,8,0.3)',
   },
   {
     icon: Star,
@@ -43,7 +43,7 @@ const achievements = [
     desc: 'Deployed two live web applications — RepoRaft and TrendPilot — serving real users on the web via Vercel.',
     color: 'from-cyan-400 to-sky-500',
     bg: 'rgba(6,182,212,0.06)',
-    border: 'rgba(6,182,212,0.2)',
+    border: 'rgba(6,182,212,0.3)',
   },
   {
     icon: Cpu,
@@ -51,7 +51,7 @@ const achievements = [
     desc: 'Integrated OpenAI APIs into production applications, building AI-driven content generation and chat interfaces.',
     color: 'from-violet-400 to-fuchsia-500',
     bg: 'rgba(139,92,246,0.06)',
-    border: 'rgba(139,92,246,0.2)',
+    border: 'rgba(139,92,246,0.3)',
   },
 ];
 

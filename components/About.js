@@ -3,20 +3,17 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin, Lightbulb, GitMerge, Code2 } from 'lucide-react';
-
 const stats = [
   { value: '6+', label: 'Projects Built', color: 'from-emerald-400 to-teal-500' },
   { value: '2', label: 'Live Sites', color: 'from-indigo-400 to-purple-500' },
   { value: '10+', label: 'Technologies', color: 'from-pink-400 to-rose-500' },
 ];
-
 const facts = [
   { icon: MapPin, text: 'Based in Lucknow, India', color: 'text-primary' },
   { icon: Code2, text: 'Self-taught developer', color: 'text-secondary' },
   { icon: GitMerge, text: 'Open Source contributor', color: 'text-emerald-500' },
   { icon: Lightbulb, text: 'AI enthusiast & explorer', color: 'text-indigo-500' },
 ];
-
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -31,12 +28,10 @@ function FadeIn({ children, delay = 0 }) {
     </motion.div>
   );
 }
-
 export default function About() {
   return (
     <section id="about" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
         <FadeIn>
           <div className="text-center mb-16">
             <span className="text-sm font-semibold text-primary uppercase tracking-widest">About Me</span>
@@ -46,9 +41,7 @@ export default function About() {
             </h2>
           </div>
         </FadeIn>
-
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Bio */}
           <FadeIn delay={0.1}>
             <div className="space-y-5">
               <p className="text-textMuted text-lg leading-relaxed">
@@ -67,8 +60,6 @@ export default function About() {
                 When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open
                 source, or dreaming up the next big project.
               </p>
-
-              {/* Fun facts */}
               <div className="grid grid-cols-2 gap-3 mt-6">
                 {facts.map(({ icon: Icon, text, color }) => (
                   <div key={text} className="glass-card p-3 rounded-2xl flex items-center gap-3">
@@ -79,8 +70,6 @@ export default function About() {
               </div>
             </div>
           </FadeIn>
-
-          {/* Stats */}
           <FadeIn delay={0.2}>
             <div className="space-y-6">
               {stats.map(({ value, label, color }, i) => (
@@ -99,8 +88,6 @@ export default function About() {
                   </div>
                 </div>
               ))}
-
-              {/* Availability badge */}
               <div className="glass-card p-4 rounded-2xl flex items-center gap-3">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />

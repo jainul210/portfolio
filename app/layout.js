@@ -1,6 +1,5 @@
 import './globals.css';
 import ScrollToTop from '@/components/ScrollToTop';
-
 export const metadata = {
   title: 'Jainul Abdeen — Full-Stack Developer',
   description:
@@ -13,7 +12,6 @@ export const metadata = {
     type: 'website',
   },
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

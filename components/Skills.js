@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Globe, Server, Code, Brain, Wrench, Database } from 'lucide-react';
-
 const skillCategories = [
   {
     title: 'Frontend',
@@ -53,9 +52,7 @@ const skillCategories = [
     border: 'rgba(6,182,212,0.25)',
     skills: ['Git & GitHub', 'VS Code', 'Vercel', 'Linux CLI', 'LaTeX'],
   },
-  
 ];
-
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -70,12 +67,10 @@ function FadeIn({ children, delay = 0 }) {
     </motion.div>
   );
 }
-
 export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <FadeIn>
           <div className="text-center mb-16">
             <span className="text-sm font-semibold text-primary uppercase tracking-widest">
@@ -89,7 +84,6 @@ export default function Skills() {
             </p>
           </div>
         </FadeIn>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map(({ title, icon: Icon, color, bg, border, skills }, i) => (
             <FadeIn key={title} delay={i * 0.08}>

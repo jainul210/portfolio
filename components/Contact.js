@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '@/components/BrandIcons';
-
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -19,7 +18,6 @@ function FadeIn({ children, delay = 0 }) {
     </motion.div>
   );
 }
-
 const contactLinks = [
   {
     icon: Mail,
@@ -43,19 +41,15 @@ const contactLinks = [
     color: 'from-pink-400 to-rose-500',
   },
 ];
-
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState(null); // null | 'success' | 'error'
+  const [status, setStatus] = useState(null); 
   const [loading, setLoading] = useState(false);
-
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus(null);
-
     try {
       const response = await fetch('https://formspree.io/f/mvzldlyy', {
         method: 'POST',
@@ -69,7 +63,6 @@ export default function Contact() {
           message: form.message,
         }),
       });
-
       if (response.ok) {
         setStatus('success');
         setForm({ name: '', email: '', message: '' });
@@ -83,11 +76,9 @@ export default function Contact() {
       setLoading(false);
     }
   };
-
   return (
     <section id="contact" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <FadeIn>
           <div className="text-center mb-16">
             <span className="text-sm font-semibold text-primary uppercase tracking-widest">
@@ -101,9 +92,7 @@ export default function Contact() {
             </p>
           </div>
         </FadeIn>
-
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Contact Links */}
           <FadeIn delay={0.1}>
             <div className="space-y-5">
               <h3 className="font-bold text-textDark text-xl mb-6">Reach me directly</h3>
@@ -127,8 +116,6 @@ export default function Contact() {
                   </div>
                 </motion.a>
               ))}
-
-              {/* Response time */}
               <div className="glass-card p-4 rounded-2xl flex items-center gap-3 mt-4">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
@@ -140,12 +127,9 @@ export default function Contact() {
               </div>
             </div>
           </FadeIn>
-
-          {/* Form */}
           <FadeIn delay={0.2}>
             <div className="glass-card p-8 rounded-3xl">
               <h3 className="font-bold text-textDark text-xl mb-6">Send a message</h3>
-
               {status === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -156,7 +140,6 @@ export default function Contact() {
                   Message sent! I&apos;ll get back to you soon.
                 </motion.div>
               )}
-
               {status === 'error' && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -167,7 +150,6 @@ export default function Contact() {
                   Something went wrong. Please try again.
                 </motion.div>
               )}
-
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-xs font-semibold text-textMuted uppercase tracking-wide mb-1.5">
@@ -214,7 +196,6 @@ export default function Contact() {
                     className="input-glass resize-none"
                   />
                 </div>
-
                 <motion.button
                   type="submit"
                   disabled={loading}

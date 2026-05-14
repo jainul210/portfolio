@@ -8,17 +8,11 @@ import Achievements from '@/components/Achievements';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import BackgroundOrbs from '@/components/BackgroundOrbs';
-
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-bg">
-      {/* Background orbs */}
       <BackgroundOrbs />
-
-      {/* Navigation */}
       <Navbar />
-
-      {/* Sections */}
       <Hero />
       <About />
       <Skills />

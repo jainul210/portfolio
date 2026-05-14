@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { GraduationCap, School, BookOpen } from 'lucide-react';
-
 const events = [
   {
     year: '2025 – 2029',
@@ -33,7 +32,6 @@ const events = [
     current: false,
   },
 ];
-
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -48,12 +46,10 @@ function FadeIn({ children, delay = 0 }) {
     </motion.div>
   );
 }
-
 export default function Timeline() {
   return (
     <section id="timeline" className="py-24 px-6">
       <div className="max-w-3xl mx-auto">
-        {/* Header */}
         <FadeIn>
           <div className="text-center mb-16">
             <span className="text-sm font-semibold text-primary uppercase tracking-widest">
@@ -67,26 +63,19 @@ export default function Timeline() {
             </p>
           </div>
         </FadeIn>
-
         <div className="relative">
-          {/* Vertical line */}
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-pink-400 rounded-full" />
-
           <div className="space-y-8">
             {events.map(({ year, title, org, detail, icon: Icon, color, current }, i) => (
               <FadeIn key={title} delay={i * 0.15}>
                 <div className="flex gap-6 items-start">
-                  {/* Icon dot */}
                   <div className="relative flex-shrink-0">
                     <div
                       className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center shadow-lg z-10 relative`}
                     >
                       <Icon size={24} className="text-white" />
                     </div>
-                  
                   </div>
-
-                  {/* Card */}
                   <motion.div
                     className="glass-card p-5 rounded-2xl flex-1"
                     whileHover={{ x: 4, transition: { duration: 0.2 } }}

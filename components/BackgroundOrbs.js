@@ -1,9 +1,7 @@
 'use client';
-
 export default function BackgroundOrbs() {
   return (
     <div className="pointer-events-none fixed inset-0 overflow-hidden z-0" aria-hidden="true">
-      {/* Top-left emerald orb */}
       <div
         className="absolute w-[600px] h-[600px] rounded-full"
         style={{
@@ -14,7 +12,6 @@ export default function BackgroundOrbs() {
           opacity: 0.8,
         }}
       />
-      {/* Top-right indigo orb */}
       <div
         className="absolute w-[500px] h-[500px] rounded-full"
         style={{
@@ -25,7 +22,6 @@ export default function BackgroundOrbs() {
           opacity: 0.7,
         }}
       />
-      {/* Middle emerald orb */}
       <div
         className="absolute w-[400px] h-[400px] rounded-full"
         style={{
@@ -36,7 +32,6 @@ export default function BackgroundOrbs() {
           opacity: 0.5,
         }}
       />
-      {/* Bottom-left indigo orb */}
       <div
         className="absolute w-[400px] h-[400px] rounded-full"
         style={{
@@ -47,7 +42,6 @@ export default function BackgroundOrbs() {
           opacity: 0.5,
         }}
       />
-      {/* Bottom-right emerald orb */}
       <div
         className="absolute w-[350px] h-[350px] rounded-full"
         style={{

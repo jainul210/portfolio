@@ -1,6 +1,4 @@
 'use client';
-
-// GitHub SVG icon
 export function GitHubIcon({ size = 24, className = '' }) {
   return (
     <svg
@@ -15,8 +13,6 @@ export function GitHubIcon({ size = 24, className = '' }) {
     </svg>
   );
 }
-
-// LinkedIn SVG icon
 export function LinkedInIcon({ size = 24, className = '' }) {
   return (
     <svg

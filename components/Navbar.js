@@ -2,19 +2,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-
 const links = ['About', 'Skills', 'Projects', 'Timeline', 'Achievements', 'Contact'];
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
@@ -25,7 +21,6 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
           <div className="w-10 h-10 rounded-xl btn-gradient flex items-center justify-center font-bold text-white text-lg shadow-lg group-hover:scale-105 transition-transform">
             JA
@@ -34,8 +29,6 @@ export default function Navbar() {
             Jainul<span className="gradient-text"> Abdeen</span>
           </span>
         </a>
-
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <a
@@ -48,8 +41,6 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-
-        {/* Hire Me */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#contact"
@@ -58,8 +49,6 @@ export default function Navbar() {
             Hire Me
           </a>
         </div>
-
-        {/* Mobile menu */}
         <button
           className="md:hidden p-2 glass-card rounded-xl"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -68,8 +57,6 @@ export default function Navbar() {
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
-
-      {/* Mobile dropdown */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div

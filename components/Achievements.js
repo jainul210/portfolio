@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { GitMerge, Cpu, Users, Lightbulb, Star, Trophy } from 'lucide-react';
-
 const achievements = [
   {
     icon: GitMerge,
@@ -54,7 +53,6 @@ const achievements = [
     border: 'rgba(139,92,246,0.3)',
   },
 ];
-
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -69,12 +67,10 @@ function FadeIn({ children, delay = 0 }) {
     </motion.div>
   );
 }
-
 export default function Achievements() {
   return (
     <section id="achievements" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <FadeIn>
           <div className="text-center mb-16">
             <span className="text-sm font-semibold text-primary uppercase tracking-widest">
@@ -88,7 +84,6 @@ export default function Achievements() {
             </p>
           </div>
         </FadeIn>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map(({ icon: Icon, title, desc, color, bg, border }, i) => (
             <FadeIn key={title} delay={i * 0.08}>

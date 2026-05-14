@@ -4,7 +4,6 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ExternalLink, Zap, BarChart2, MessageCircle, CheckSquare, Layers, Globe } from 'lucide-react';
 import { GitHubIcon } from '@/components/BrandIcons';
-
 const projects = [
   {
     title: 'RepoRaft',
@@ -67,7 +66,6 @@ const projects = [
     live: false,
   },
 ];
-
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -82,12 +80,10 @@ function FadeIn({ children, delay = 0 }) {
     </motion.div>
   );
 }
-
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <FadeIn>
           <div className="text-center mb-16">
             <span className="text-sm font-semibold text-primary uppercase tracking-widest">
@@ -101,7 +97,6 @@ export default function Projects() {
             </p>
           </div>
         </FadeIn>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map(({ title, url, urlLabel, desc, tech, icon: Icon, color, live }, i) => (
             <FadeIn key={title} delay={i * 0.08}>
@@ -109,7 +104,6 @@ export default function Projects() {
                 className="glass-card p-6 rounded-3xl h-full flex flex-col group"
                 whileHover={{ y: -8, transition: { duration: 0.25 } }}
               >
-                {/* Icon + Live badge */}
                 <div className="flex items-start justify-between mb-4">
                   <div
                     className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center shadow-lg`}
@@ -123,11 +117,7 @@ export default function Projects() {
                     </span>
                   )}
                 </div>
-
-                {/* Title */}
                 <h3 className="font-bold text-textDark text-xl mb-2">{title}</h3>
-
-                {/* URL */}
                 {urlLabel && (
                   <a
                     href={url}
@@ -139,11 +129,7 @@ export default function Projects() {
                     {urlLabel}
                   </a>
                 )}
-
-                {/* Description */}
                 <p className="text-textMuted text-sm leading-relaxed flex-1 mb-4">{desc}</p>
-
-                {/* Tech pills */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {tech.map((t) => (
                     <span
@@ -154,8 +140,6 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-
-                {/* Links */}
                 <div className="flex gap-3 mt-auto">
                   {url && (
                     <a

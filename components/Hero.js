@@ -73,10 +73,14 @@ export default function Hero() {
             href="/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-glass flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-base text-textDark border border-white/70"
+            className="btn-glass flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-base text-textDark border border-white/70  relative overflow-hidden group "
           >
+            
             <Download size={18} />
-            Download Resume
+            <span
+    class="absolute right-0 w-10 h-full top-0 transition-all duration-700 transform translate-x-12 bg-gray-400 opacity-10 -skew-x-12 group-hover:-translate-x-72 ease"
+  ></span>
+  <span class="relative text-xl font-semibold">Download Resume</span>
           </a>
         </motion.div>
         <motion.div variants={item} className="flex items-center justify-center gap-4 mb-16">

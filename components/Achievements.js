@@ -77,7 +77,7 @@ export default function Achievements() {
               Milestones
             </span>
             <h2 className="text-4xl md:text-5xl font-black mt-2">
-              Achievements & <span className="gradient-text">Recognition</span>
+              Achievements & <span className="gradient-text">Recognitions</span>
             </h2>
             <p className="text-textMuted mt-3 max-w-xl mx-auto">
               Highlights from my journey as a developer

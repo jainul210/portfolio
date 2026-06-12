@@ -1,13 +1,20 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, ArrowDown, Download, Briefcase } from 'lucide-react';
-import { GitHubIcon, LinkedInIcon } from '@/components/BrandIcons';
-const roles = ['Full-Stack Developer', 'AI Enthusiast', 'Next.js Developer', 'Open Source Contributor'];
+import { Download, ArrowUpRight, Terminal } from 'lucide-react';
+
+const roles = [
+  'Full-Stack Developer',
+  'AI Enthusiast',
+  'Next.js Developer',
+  'Open Source Contributor',
+];
+
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [deleting, setDeleting] = useState(false);
+
   useEffect(() => {
     const current = roles[roleIndex];
     let timeout;
@@ -23,94 +30,195 @@ export default function Hero() {
     }
     return () => clearTimeout(timeout);
   }, [displayed, deleting, roleIndex]);
-  const container = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.15 } },
-  };
-  const item = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-  };
+
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 24 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
+  });
+
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-20"
     >
-      <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl mx-auto">
-        <motion.div variants={item} className="inline-flex items-center gap-2 mb-6">
-          <div className="glass-card px-5 py-2 rounded-full text-sm font-medium text-textMuted flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary animate-ping inline-block" />
-            👋 Hello, I&apos;m
+      {/* Subtle gradient wash */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+
+      {/* Floating blobs — match Stitch positioning */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full opacity-20 pointer-events-none">
+        <div className="absolute top-1/4 left-0 w-64 h-64 bg-primary rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-secondary rounded-full blur-[120px]" />
+      </div>
+
+      {/* ── Content ── */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* ── LEFT ── */}
+          <div className="text-left space-y-8">
+
+            {/* Badge */}
+            <motion.div {...fadeUp(0.05)}>
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-card shadow-sm">
+                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', fontWeight: 600, letterSpacing: '0.08em' }} className="uppercase text-primary">
+                  Available for projects
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Heading block */}
+            <motion.div {...fadeUp(0.15)} className="space-y-4">
+              <h1
+                className="text-textDark leading-[1.1]"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(48px, 7vw, 80px)', fontWeight: 800, letterSpacing: '-0.02em' }}
+              >
+                Jainul <br />
+                <span className="gradient-text">Abdeen</span>
+              </h1>
+
+              {/* Typewriter */}
+              <div
+                className="flex items-center gap-1 text-textMuted"
+                style={{ fontFamily: "'Inter', sans-serif", fontSize: '18px', fontWeight: 500, lineHeight: 1.6, minHeight: '29px' }}
+              >
+                <span>{displayed}</span>
+                <span className="inline-block w-0.5 h-5 bg-secondary animate-pulse rounded-full" />
+              </div>
+
+              <p
+                className="text-textMuted max-w-xl leading-relaxed"
+                style={{ fontFamily: "'Inter', sans-serif", fontSize: '18px', fontWeight: 400, lineHeight: 1.6 }}
+              >
+                First-year B.Tech CSE student at{' '}
+                <span className="font-bold text-secondary">University of Lucknow</span>.
+                I architect modern web experiences and explore the frontiers of AI integration.
+              </p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div {...fadeUp(0.28)} className="flex flex-wrap gap-4 pt-4">
+              <motion.a
+                href="#projects"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="btn-gradient flex items-center gap-3 px-8 py-4 rounded-2xl text-white shadow-lg"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '18px', fontWeight: 700 }}
+              >
+                View My Work
+                <ArrowUpRight size={20} />
+              </motion.a>
+              <motion.a
+                href="/Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="glass-card flex items-center gap-3 px-8 py-4 rounded-2xl text-textDark hover:bg-white/80 transition-colors"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '18px', fontWeight: 700 }}
+              >
+                <Download size={20} />
+                Resume
+              </motion.a>
+            </motion.div>
           </div>
-        </motion.div>
-        <motion.h1
-          variants={item}
-          className="text-5xl sm:text-6xl md:text-7xl font-black mb-4 leading-tight"
-        >
-          <span className="gradient-text">Jainul Abdeen</span>
-        </motion.h1>
-        <motion.div
-          variants={item}
-          className="text-xl sm:text-2xl font-semibold text-textMuted mb-4 h-9 flex items-center justify-center gap-1"
-        >
-          <span className="text-secondary">{displayed}</span>
-          <span className="w-0.5 h-6 bg-secondary animate-pulse inline-block rounded-full" />
-        </motion.div>
-        <motion.p variants={item} className="text-textMuted text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          First-year B.Tech CSE student at{' '}
-          <span className="font-semibold text-textDark">University of Lucknow</span>, building modern
-          web experiences and exploring AI frontiers.
-        </motion.p>
-        <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4 mb-12">
-          <a
-            href="#projects"
-            className="btn-gradient flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-base shadow-lg"
+
+          {/* ── RIGHT: Glass Card — exact Stitch structure ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 36 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden lg:block relative"
           >
-            <Briefcase size={18} />
-            View Work
-          </a>
-          <a
-            href="/Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-glass flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-base text-textDark border border-white/70  relative overflow-hidden group "
-          >
-            
-            <Download size={18} />
-            <span
-    class="absolute right-0 w-10 h-full top-0 transition-all duration-700 transform translate-x-12 bg-gray-400 opacity-10 -skew-x-12 group-hover:-translate-x-72 ease"
-  ></span>
-  <span class="relative text-xl font-semibold">Download Resume</span>
-          </a>
-        </motion.div>
-        <motion.div variants={item} className="flex items-center justify-center gap-4 mb-16">
-          {[
-            { href: 'https://github.com/jainul210', icon: GitHubIcon, label: 'GitHub' },
-            { href: 'https://linkedin.com/in/jainul-abdeen-452645394', icon: LinkedInIcon, label: 'LinkedIn' },
-            { href: 'mailto:jainulabdeen210@gmail.com', icon: Mail, label: 'Email' },
-          ].map(({ href, icon: Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="glass-card w-11 h-11 flex items-center justify-center rounded-xl text-textMuted hover:text-primary hover:scale-110 transition-all duration-300"
+            {/* Decorative orbs behind card */}
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl -z-10" />
+
+            <motion.div
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="glass-card p-10 rounded-[3rem] border-2 border-white/50 shadow-2xl relative z-20"
             >
-              <Icon size={20} />
-            </a>
-          ))}
-        </motion.div>
-        <motion.div
-          variants={item}
-          className="flex flex-col items-center gap-2 text-textMuted text-xs"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span>Scroll down</span>
-          <ArrowDown size={16} />
-        </motion.div>
-      </motion.div>
+              <div className="space-y-8">
+
+                {/* Card header */}
+                <div className="flex items-center gap-6">
+                  <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-xl flex-shrink-0">
+                    <Terminal size={40} />
+                  </div>
+                  <div>
+                    <h3
+                      className="text-textDark"
+                      style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '24px', fontWeight: 700, lineHeight: 1.3 }}
+                    >
+                      Full-Stack
+                    </h3>
+                    <p
+                      className="text-textMuted"
+                      style={{ fontFamily: "'Inter', sans-serif", fontSize: '16px', fontWeight: 400 }}
+                    >
+                      Developer &amp; Student
+                    </p>
+                  </div>
+                </div>
+
+                {/* Stats grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 rounded-2xl bg-white/40 border border-white/60">
+                    <p
+                      className="text-primary font-bold text-2xl"
+                      style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}
+                    >6+</p>
+                    <p
+                      className="uppercase opacity-60 text-textMuted"
+                      style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', fontWeight: 600, letterSpacing: '0.05em' }}
+                    >Projects</p>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-white/40 border border-white/60">
+                    <p
+                      className="text-secondary font-bold text-2xl"
+                      style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}
+                    >2</p>
+                    <p
+                      className="uppercase opacity-60 text-textMuted"
+                      style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', fontWeight: 600, letterSpacing: '0.05em' }}
+                    >Live Sites</p>
+                  </div>
+                </div>
+
+                {/* Progress bars — exact Stitch layout */}
+                <div className="flex gap-3">
+                  <div className="h-2 flex-1 bg-primary/20 rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full bg-primary rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: '85%' }}
+                      transition={{ duration: 1.3, delay: 0.7, ease: 'easeOut' }}
+                    />
+                  </div>
+                  <div className="h-2 flex-1 bg-secondary/20 rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full bg-secondary rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: '70%' }}
+                      transition={{ duration: 1.3, delay: 0.9, ease: 'easeOut' }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll indicator — exact Stitch */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', fontWeight: 600, letterSpacing: '-0.02em' }} className="uppercase">
+          Scroll
+        </span>
+        <div className="w-px h-12 bg-gradient-to-b from-textMuted to-transparent" />
+      </div>
     </section>
   );
 }

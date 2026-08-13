@@ -10,7 +10,7 @@ import Footer from '@/components/Footer';
 import BackgroundOrbs from '@/components/BackgroundOrbs';
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-bg">
+    <main className="relative min-h-screen select-none bg-bg">
       <BackgroundOrbs />
       <Navbar />
       <Hero />

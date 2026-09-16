@@ -1,14 +1,29 @@
 import './globals.css';
 import ScrollToTop from '@/components/ScrollToTop';
 export const metadata = {
-  title: 'Jainul Abdeen — Full-Stack Developer',
+  title: 'Jainul Abdeen — Full-Stack Developer & AI Explorer',
   description:
-    'Personal portfolio of Jainul Abdeen, a B.Tech CSE student at University of Lucknow and Full-Stack Developer specializing in Next.js, React, and AI integrations.',
-  keywords: ['Jainul Abdeen', 'Full Stack Developer', 'Next.js', 'React', 'Portfolio', 'B.Tech CSE', 'Lucknow'],
+    'Personal portfolio of Jainul Abdeen, B.Tech CSE student at University of Lucknow. Full-stack web developer and Python data science practitioner building with Next.js, FastAPI, and AI/ML tooling.',
+  keywords: [
+    'Jainul Abdeen',
+    'Full Stack Developer',
+    'Python',
+    'Data Science',
+    'FastAPI',
+    'Next.js',
+    'React',
+    'Machine Learning',
+    'scikit-learn',
+    'RepoRaft',
+    'CalPrice',
+    'B.Tech CSE',
+    'University of Lucknow',
+  ],
   authors: [{ name: 'Jainul Abdeen' }],
   openGraph: {
-    title: 'Jainul Abdeen — Full-Stack Developer',
-    description: 'B.Tech CSE student & Full-Stack Developer from Lucknow, building with Next.js and AI.',
+    title: 'Jainul Abdeen — Full-Stack Developer & AI Explorer',
+    description:
+      'B.Tech CSE student at University of Lucknow building high-performance web apps, Python data science pipelines, and ML models.',
     type: 'website',
   },
 };

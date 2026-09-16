@@ -5,8 +5,9 @@ import { Download, ArrowUpRight, Terminal } from 'lucide-react';
 
 const roles = [
   'Full-Stack Developer',
-  'AI Enthusiast',
-  'Next.js Developer',
+  'AI & ML Explorer',
+  'Python & Data Science',
+  'Next.js & FastAPI Developer',
   'Open Source Contributor',
 ];
 
@@ -63,7 +64,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-card shadow-sm">
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', fontWeight: 600, letterSpacing: '0.08em' }} className="uppercase text-primary">
-                  Available for projects
+                  Available for projects &amp; internships
                 </span>
               </div>
             </motion.div>
@@ -91,9 +92,9 @@ export default function Hero() {
                 className="text-textMuted max-w-xl leading-relaxed"
                 style={{ fontFamily: "'Inter', sans-serif", fontSize: '18px', fontWeight: 400, lineHeight: 1.6 }}
               >
-                First-year B.Tech CSE student at{' '}
+                Computer Science &amp; Engineering student at{' '}
                 <span className="font-bold text-secondary">University of Lucknow</span>.
-                I architect modern web experiences and explore the frontiers of AI integration.
+                Building clean, efficient software across full-stack web development, Python data science, and modern AI tooling.
               </p>
             </motion.div>
 
@@ -152,13 +153,13 @@ export default function Hero() {
                       className="text-textDark"
                       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '24px', fontWeight: 700, lineHeight: 1.3 }}
                     >
-                      Full-Stack
+                      Full-Stack &amp; AI
                     </h3>
                     <p
                       className="text-textMuted"
                       style={{ fontFamily: "'Inter', sans-serif", fontSize: '16px', fontWeight: 400 }}
                     >
-                      Developer &amp; Student
+                      B.Tech CSE Student
                     </p>
                   </div>
                 </div>
@@ -169,21 +170,21 @@ export default function Hero() {
                     <p
                       className="text-primary font-bold text-2xl"
                       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}
-                    >6+</p>
-                    <p
-                      className="uppercase opacity-60 text-textMuted"
-                      style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', fontWeight: 600, letterSpacing: '0.05em' }}
-                    >Projects</p>
-                  </div>
-                  <div className="p-4 rounded-2xl bg-white/40 border border-white/60">
-                    <p
-                      className="text-secondary font-bold text-2xl"
-                      style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}
                     >2</p>
                     <p
                       className="uppercase opacity-60 text-textMuted"
                       style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', fontWeight: 600, letterSpacing: '0.05em' }}
                     >Live Sites</p>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-white/40 border border-white/60">
+                    <p
+                      className="text-secondary font-bold text-2xl"
+                      style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}
+                    >94.2%</p>
+                    <p
+                      className="uppercase opacity-60 text-textMuted"
+                      style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', fontWeight: 600, letterSpacing: '0.05em' }}
+                    >ML Accuracy (R²)</p>
                   </div>
                 </div>
 

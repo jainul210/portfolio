@@ -3,10 +3,10 @@ import { Mail, Heart } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '@/components/BrandIcons';
 const socials = [
   { icon: GitHubIcon, href: 'https://github.com/jainul210', label: 'GitHub' },
-  { icon: LinkedInIcon, href: 'https://linkedin.com/in/jainul-abdeen-452645394', label: 'LinkedIn' },
+  { icon: LinkedInIcon, href: 'https://linkedin.com/in/jainul210', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:jainulabdeen210@gmail.com', label: 'Email' },
 ];
-const links = ['About', 'Skills', 'Projects', 'Timeline', 'Contact'];
+const links = ['About', 'Skills', 'Projects', 'Timeline', 'Achievements', 'Contact'];
 export default function Footer() {
   const year = new Date().getFullYear();
   return (

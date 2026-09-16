@@ -2,7 +2,7 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Send, CheckCircle, AlertCircle, MapPin } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '@/components/BrandIcons';
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null);
@@ -29,8 +29,8 @@ const contactLinks = [
   {
     icon: LinkedInIcon,
     label: 'LinkedIn',
-    value: 'jainul-abdeen-452645394',
-    href: 'https://linkedin.com/in/jainul-abdeen-452645394',
+    value: 'linkedin.com/in/jainul210',
+    href: 'https://linkedin.com/in/jainul210',
     color: 'from-indigo-400 to-purple-500',
   },
   {
@@ -39,6 +39,13 @@ const contactLinks = [
     value: 'github.com/jainul210',
     href: 'https://github.com/jainul210',
     color: 'from-pink-400 to-rose-500',
+  },
+  {
+    icon: MapPin,
+    label: 'Location',
+    value: 'Lucknow, Uttar Pradesh, India',
+    href: 'https://maps.google.com/?q=Lucknow,Uttar+Pradesh,India',
+    color: 'from-yellow-400 to-orange-500',
   },
 ];
 export default function Contact() {

@@ -6,61 +6,67 @@ import { ExternalLink, Zap, BarChart2, MessageCircle, CheckSquare, Layers, Globe
 import { GitHubIcon } from '@/components/BrandIcons';
 const projects = [
   {
-    title: 'RepoRaft',
+    title: 'RepoRaft — Community Resource Hub',
     url: 'https://reporaft.vercel.app',
     urlLabel: 'reporaft.vercel.app',
-    desc: 'Community platform for students to share tutorials and repositories with a Reddit-style upvoting system. Built for student-developer collaboration.',
-    tech: ['Next.js', 'React', 'Tailwind', 'Node.js'],
+    year: '2025',
+    desc: 'Full-stack community platform where students discover and share the best tutorials, GitHub repos, PDFs, and courses — organised by topic and ranked by upvotes. Includes NextAuth authentication, category filtering, and zero-downtime CI/CD on Vercel.',
+    tech: ['Next.js', 'React.js', 'Tailwind CSS', 'Node.js', 'Vercel'],
     icon: Globe,
     color: 'from-emerald-400 to-teal-500',
     live: true,
   },
   {
-    title: 'TrendPilot',
-    url: 'https://h4g-ten.vercel.app',
-    urlLabel: 'h4g-ten.vercel.app',
-    desc: 'AI content factory that auto-generates viral scripts and schedules social media posts. Integrates OpenAI APIs for full automation.',
-    tech: ['Next.js', 'React', 'AI APIs', 'Node.js'],
-    icon: Zap,
+    title: 'CalPrice Analytics — California Housing Price Predictor',
+    url: 'https://calprice.vercel.app',
+    urlLabel: 'calprice.vercel.app',
+    year: '2026',
+    desc: 'Full-stack ML web app predicting California median house prices via a Random Forest Regressor trained on 20,640 StatLib records (94.2% R² accuracy). Features a FastAPI /predict inference backend and Next.js UI with live confidence intervals & feature breakdown.',
+    tech: ['Next.js', 'React.js', 'Python', 'FastAPI', 'scikit-learn', 'Pandas', 'NumPy'],
+    icon: BarChart2,
     color: 'from-indigo-400 to-purple-500',
     live: true,
   },
   {
     title: 'Personal Portfolio',
-    url: null,
-    urlLabel: null,
-    desc: 'This very portfolio — built for performance with a 95+ Lighthouse score, glassmorphism design, and smooth Framer Motion animations.',
-    tech: ['Next.js', 'React', 'Tailwind', 'Framer Motion'],
+    url: 'https://jainulabdeen.vercel.app',
+    urlLabel: 'jainulabdeen.vercel.app',
+    year: '2025',
+    desc: 'Modern developer portfolio built with Next.js 14, Tailwind CSS, and Framer Motion. Engineered for visual excellence with glassmorphism aesthetics, responsive micro-animations, and 95+ Lighthouse performance.',
+    tech: ['Next.js', 'React.js', 'Tailwind CSS', 'Framer Motion'],
     icon: Layers,
     color: 'from-pink-400 to-rose-500',
-    live: false,
+    live: true,
   },
   {
-    title: 'Data Dashboard',
+    title: 'Data Science & Visualizations',
     url: null,
     urlLabel: null,
-    desc: 'IPL dataset analysis project with comprehensive visualizations. Extracts insights from match data using Python data science stack.',
-    tech: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
-    icon: BarChart2,
+    year: '2024',
+    desc: 'Exploratory data analysis and visualization pipelines leveraging Python data science stack. Performs feature correlation, outlier treatment, and dynamic statistical charting on complex public datasets.',
+    tech: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'scikit-learn'],
+    icon: Zap,
     color: 'from-yellow-400 to-orange-500',
     live: false,
   },
   {
-    title: 'To-Do App',
+    title: 'Full-Stack Task Manager',
     url: null,
     urlLabel: null,
-    desc: 'Full-stack CRUD application with JWT authentication, task management, priorities, and a clean responsive interface.',
-    tech: ['React', 'Node.js', 'REST API'],
+    year: '2024',
+    desc: 'Full-stack productivity web app featuring secure JWT authentication, RESTful APIs, MongoDB database storage, status tracking, and responsive UI.',
+    tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs'],
     icon: CheckSquare,
     color: 'from-cyan-400 to-sky-500',
     live: false,
   },
   {
-    title: 'AI Chat',
+    title: 'AI Conversational Interface',
     url: null,
     urlLabel: null,
-    desc: 'ChatGPT-style conversational UI with streaming responses, conversation history, and a polished modern interface.',
-    tech: ['React', 'Tailwind', 'OpenAI API'],
+    year: '2024',
+    desc: 'Interactive chat interface experimenting with modern prompt engineering, response streaming, context window caching, and clean modern styling.',
+    tech: ['React.js', 'FastAPI', 'Prompt Engineering', 'Tailwind CSS'],
     icon: MessageCircle,
     color: 'from-violet-400 to-fuchsia-500',
     live: false,
@@ -98,7 +104,7 @@ export default function Projects() {
           </div>
         </FadeIn>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map(({ title, url, urlLabel, desc, tech, icon: Icon, color, live }, i) => (
+          {projects.map(({ title, url, urlLabel, year, desc, tech, icon: Icon, color, live }, i) => (
             <FadeIn key={title} delay={i * 0.08}>
               <motion.div
                 className="glass-card p-6 rounded-3xl h-full flex flex-col group"
@@ -110,12 +116,19 @@ export default function Projects() {
                   >
                     <Icon size={22} className="text-white" />
                   </div>
-                  {live && (
-                    <span className="flex items-center gap-1.5 text-xs font-semibold text-primary bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
-                      Live
-                    </span>
-                  )}
+                  <div className="flex items-center gap-2">
+                    {year && (
+                      <span className="text-xs font-mono font-semibold text-textMuted bg-white/60 border border-white/80 px-2 py-0.5 rounded-full">
+                        {year}
+                      </span>
+                    )}
+                    {live && (
+                      <span className="flex items-center gap-1.5 text-xs font-semibold text-primary bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
+                        Live
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <h3 className="font-bold text-textDark text-xl mb-2">{title}</h3>
                 {urlLabel && (

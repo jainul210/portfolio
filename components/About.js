@@ -4,15 +4,15 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin, Lightbulb, GitMerge, Code2 } from 'lucide-react';
 const stats = [
-  { value: '6+', label: 'Projects Built', color: 'from-emerald-400 to-teal-500' },
-  { value: '2', label: 'Live Sites', color: 'from-indigo-400 to-purple-500' },
-  { value: '10+', label: 'Technologies', color: 'from-pink-400 to-rose-500' },
+  { value: '2', label: 'Live Deployed Apps', color: 'from-emerald-400 to-teal-500' },
+  { value: '94.2%', label: 'ML Model Accuracy', color: 'from-indigo-400 to-purple-500' },
+  { value: '15+', label: 'Technologies & Tools', color: 'from-pink-400 to-rose-500' },
 ];
 const facts = [
-  { icon: MapPin, text: 'Based in Lucknow, India', color: 'text-primary' },
-  { icon: Code2, text: 'Self-taught developer', color: 'text-secondary' },
+  { icon: MapPin, text: 'Lucknow, Uttar Pradesh, India', color: 'text-primary' },
+  { icon: Code2, text: 'Full-Stack & Python Dev', color: 'text-secondary' },
   { icon: GitMerge, text: 'Open Source contributor', color: 'text-emerald-500' },
-  { icon: Lightbulb, text: 'AI enthusiast & explorer', color: 'text-indigo-500' },
+  { icon: Lightbulb, text: 'Hindi (Native) • English (Proficient)', color: 'text-indigo-500' },
 ];
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef(null);
@@ -45,20 +45,21 @@ export default function About() {
           <FadeIn delay={0.1}>
             <div className="space-y-5">
               <p className="text-textMuted text-lg leading-relaxed">
-                Hey there! I&apos;m <span className="font-bold text-textDark">Jainul Abdeen</span>, a passionate
-                first-year B.Tech Computer Science student from Lucknow, India. I build full-stack web
-                applications that are fast, beautiful, and user-centric.
+                Hey there! I&apos;m <span className="font-bold text-textDark">Jainul Abdeen</span>, an enthusiastic
+                Computer Science and Engineering student at the{' '}
+                <span className="font-semibold text-primary">University of Lucknow</span> with a strong foundation
+                in full-stack web development, Python data science, and modern AI tooling.
               </p>
               <p className="text-textMuted text-lg leading-relaxed">
-                I&apos;ve shipped real products including{' '}
-                <span className="font-semibold text-primary">RepoRaft</span> (a community platform for
-                students) and <span className="font-semibold text-secondary">TrendPilot</span> (an
-                AI-powered social content factory). I love exploring the intersection of AI and web
-                development.
+                I&apos;ve shipped real-world production projects including{' '}
+                <span className="font-semibold text-primary">RepoRaft</span> (a community resource hub with topic
+                ranking and upvoting) and{' '}
+                <span className="font-semibold text-secondary">CalPrice Analytics</span> (a full-stack California housing
+                price predictor driven by FastAPI and a Random Forest Regressor scoring 94.2% R² accuracy).
               </p>
               <p className="text-textMuted text-lg leading-relaxed">
-                When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open
-                source, or dreaming up the next big project.
+                Passionate about building clean, efficient software and always eager to contribute to real-world
+                challenges through internships, collaborative builds, and open-source contributions.
               </p>
               <div className="grid grid-cols-2 gap-3 mt-6">
                 {facts.map(({ icon: Icon, text, color }) => (
@@ -94,7 +95,7 @@ export default function About() {
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-primary" />
                 </span>
                 <span className="text-sm font-medium text-textDark">
-                  Open to internships & collaborations
+                  Eager to contribute through internships &amp; open source
                 </span>
               </div>
             </div>
